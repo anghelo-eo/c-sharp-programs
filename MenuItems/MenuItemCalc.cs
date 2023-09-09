@@ -7,24 +7,26 @@ namespace Ex01.MenuItems
 {
     public class MenuItemCalc : MenuItemCore
     {
-        //public override string Title { get {return "Привет, мир!";} }
         public override string Title { get {return "Calc: Y + sqrt(X % Z)";} }
 
         public override void Execute()
         {
             Console.WriteLine("Calc: Y + sqrt(X % Z)");
-            Console.WriteLine("Enter Integer value of X:");
-            int X = IOUtils.SafeReadInteger(null);
-            Console.WriteLine("Enter Integer value of Z:");
-            int Z = IOUtils.SafeReadInteger(null);
+            int Y = 0;
             Console.WriteLine("Enter Integer value of Y:");
-            int Y = IOUtils.SafeReadInteger(null);
-            if(X < 0 || Z < 0)
+            Y = IOUtils.SafeReadInteger(null);
+            int X = 0;
+            Console.WriteLine("Enter Integer value of X:");
+            X = IOUtils.SafeReadInteger(null);
+            int Z = 0;
+            Console.WriteLine("Enter Integer value of Z:");
+            Z = IOUtils.SafeReadInteger(null);
+            while(X < 0 || Z <= 0)
             {
-                Console.WriteLine("X or Z cannot be negative.");
+                Console.WriteLine("X or Z cannot be negative. Z cannot be 0.");
                 Execute();
             }
-
+            Console.WriteLine($"Calc: {Y} + sqrt({X} % {Z})");
             double preanswer = Y + Math.Sqrt(X % Z);
             double answer = Math.Round(preanswer, 3);
             Console.WriteLine($"Answer is: {answer}");

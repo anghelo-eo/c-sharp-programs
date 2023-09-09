@@ -22,7 +22,7 @@ namespace Ex01
         public static void Execute()
         {               
             ShowMenu();
-            int iMenu = IOUtils.SafeReadInteger(null);// estis - 1
+            int iMenu = IOUtils.SafeReadInteger(null);// было - 1
             if (iMenu >= 0 && iMenu < Menu.MenuItems.Count)
             {
                 Menu.MenuItems.ToArray()[iMenu].Execute();

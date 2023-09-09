@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\c sharp programs\\c sharp programs.csproj": {}
+    "D:\\c sharp programs\\c sharp programs.csproj": {}
   },
   "projects": {
-    "d:\\c sharp programs\\c sharp programs.csproj": {
+    "D:\\c sharp programs\\c sharp programs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\c sharp programs\\c sharp programs.csproj",
+        "projectUniqueName": "D:\\c sharp programs\\c sharp programs.csproj",
         "projectName": "c sharp programs",
-        "projectPath": "d:\\c sharp programs\\c sharp programs.csproj",
+        "projectPath": "D:\\c sharp programs\\c sharp programs.csproj",
         "packagesPath": "C:\\Users\\Prestigio\\.nuget\\packages\\",
-        "outputPath": "d:\\c sharp programs\\obj\\",
+        "outputPath": "D:\\c sharp programs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Prestigio\\AppData\\Roaming\\NuGet\\NuGet.Config"
