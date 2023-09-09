@@ -21,15 +21,19 @@ namespace Ex01.MenuItems
             int Z = 0;
             Console.WriteLine("Enter Integer value of Z:");
             Z = IOUtils.SafeReadInteger(null);
-            while(X < 0 || Z <= 0)
+            if(X < 0 || Z <= 0)
             {
                 Console.WriteLine("X or Z cannot be negative. Z cannot be 0.");
                 Execute();
             }
-            Console.WriteLine($"Calc: {Y} + sqrt({X} % {Z})");
-            double preanswer = Y + Math.Sqrt(X % Z);
-            double answer = Math.Round(preanswer, 3);
-            Console.WriteLine($"Answer is: {answer}");
+            else
+            {
+                Console.WriteLine($"Calc: {Y} + sqrt({X} % {Z})");
+                double preanswer = Y + Math.Sqrt(X % Z);
+                double answer = Math.Round(preanswer, 3);
+                Console.WriteLine($"Answer is: {answer}");
+            }
+            
         }
     }
 }
