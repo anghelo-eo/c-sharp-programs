@@ -30,8 +30,9 @@ namespace Ex01.MenuItems
             {
                 Console.WriteLine($"Calc: {Y} + sqrt({X} % {Z})");
                 double preanswer = Y + Math.Sqrt(X % Z);
-                double answer = Math.Round(preanswer, 3);
-                Console.WriteLine($"Answer is: {answer}");
+                //double answer = Math.Round(preanswer, 3);
+                string answer = string.Format("Answer is:{0: 0.000}",preanswer);
+                Console.WriteLine(answer);
             }
             
         }
