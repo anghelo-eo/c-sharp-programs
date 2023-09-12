@@ -1,9 +1,4 @@
 .*
 .env.development
-bin/
-obj/
-bin/Debug/net7.0/c sharp programs.dll
-bin/Debug/net7.0/c sharp programs.pdb
-obj/project.nuget.cache
-obj/Debug/net7.0/c sharp programs.pdb
-obj/c sharp programs.csproj.nuget.dgspec.json
+/bin/
+/obj/
