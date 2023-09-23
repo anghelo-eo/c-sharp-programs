@@ -1,3 +1,4 @@
+using Ex01.Validation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ namespace Ex01
 {
     public static class IOUtils
     {
-        public static int SafeReadInteger(string message)
+        public static int SafeReadInteger(string message, ISpecification<int> specification)
         {
             if(!string.IsNullOrEmpty(message))
             {
@@ -19,10 +20,26 @@ namespace Ex01
                 int iValue = 0;
                 if(Int32.TryParse(sValue, out iValue))
                 {
-                    return iValue;
+                    try
+                    {
+                        if (specification != null)
+                        {
+                            specification.Validate(iValue);
+                        }
+                        return iValue;
+                    }
+
+                    catch (ValidationException ex)
+                    {
+                        Console.WriteLine("ERROR: " + ex.Message);
+                    }
                 }
-                //Console.WriteLine("Ошибка ввода. Введите целое число.");
-                Console.WriteLine("ERROR: Incorrect format. Enter Integer value...");
+
+                else
+                {
+                    //Console.WriteLine("Ошибка ввода. Введите целое число.");
+                    Console.WriteLine("ERROR: Incorrect format. Enter Integer value...");
+                }
             }
         }
 
@@ -36,7 +53,7 @@ namespace Ex01
             {
                 string sValue = Console.ReadLine();
                 DateTime date;
-                if (DateTime.TryParse(sValue, out date))
+                if (DateTime.TryParseExact(sValue, "dd.MM.yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out date))
                 {
                     return date;
                 }
