@@ -15,7 +15,7 @@ namespace Ex01
             Menu.AddItem(new MenuItemExit());
             Menu.AddItem(new MenuItemHelloWorld());
             Menu.AddItem(new MenuItemCalc());
-            Menu.AddItem(new MenuItemDate());
+            Menu.AddItem(new MenuItemRecursionDate());
             while(true)
             {
                 Menu.Execute();
@@ -23,7 +23,7 @@ namespace Ex01
         }        
     }
 
-    struct Point
+    /*struct Point
     {
         int X;
         int Y;
@@ -34,5 +34,5 @@ namespace Ex01
         int Count { get; }
         void AddItem();
         void Clear();
-    }
+    }*/
 }
