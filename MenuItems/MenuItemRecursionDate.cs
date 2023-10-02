@@ -8,7 +8,7 @@ namespace Ex01.MenuItems
 
         public override void Execute()
         {
-            int m = 0;
+            uint m = 0;
             Console.WriteLine("You need to enter two time periods (dd.MM.yyyy).");
             DateTime DateOneStart = IOUtils.SafeReadDate("Enter the start of date range number 1:");
             Console.WriteLine("Value is {0}.{1}.{2}", DateOneStart.Day, DateOneStart.Month, DateOneStart.Year);
@@ -38,9 +38,12 @@ namespace Ex01.MenuItems
             else
             {
                 var timeSpan = EndIntersection - StartIntersection;
-                m = Convert.ToInt32(timeSpan.TotalDays + 1);
+                m = Convert.ToUInt32(timeSpan.TotalDays + 1);
                 Console.WriteLine($"m = {m}");
             }
+            uint n = 5;
+            uint res = Ackermann.Acker(n, m);
+            Console.WriteLine($"res = {res}");
         }
     }
 }

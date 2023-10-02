@@ -23,7 +23,7 @@ namespace Ex01
         {               
             ShowMenu();
             int iMenu = IOUtils.SafeReadInteger("",null);// было - 1, "" нужен чтобы компилятор не буксовал
-            if (iMenu >= 0 && iMenu < Menu.MenuItems.Count)
+            /*if (iMenu >= 0 && iMenu < Menu.MenuItems.Count)
             {
                 Menu.MenuItems.ToArray()[iMenu].Execute();
             }
@@ -32,6 +32,24 @@ namespace Ex01
             {
                 Console.WriteLine("Menu item not found.");
                 //Console.WriteLine("Пункт меню не найден.");
+            }*/
+            switch (iMenu)
+            {
+                case 0:
+                    Menu.MenuItems.ToArray()[iMenu].Execute();
+                    break;
+                case 1:
+                    Menu.MenuItems.ToArray()[iMenu].Execute();
+                    break;
+                case 2:
+                    Menu.MenuItems.ToArray()[iMenu].Execute();
+                    break;
+                case 3:
+                    Menu.MenuItems.ToArray()[iMenu].Execute();
+                    break;
+                default:
+                    Console.WriteLine("Menu item not found.");
+                    break;
             }
         }
 
@@ -42,15 +60,8 @@ namespace Ex01
             int iMenuItem = 0;
             foreach (MenuItemCore menuItem in Menu.MenuItems)
             {
-                Console.WriteLine("{0}: {1}", iMenuItem++, menuItem.Title);
+                Console.WriteLine("[{0}] {1}", iMenuItem++, menuItem.Title);
             }
-            /*Console.WriteLine("---МЕНЮ---");
-            int iMenuItem = 1;
-            foreach (MenuItemCore menuItem in Menu.MenuItems)
-            {
-                Console.WriteLine("{0}: {1}", iMenuItem++, menuItem.Title);
-            }
-            */
         }
     }
 }
