@@ -51,16 +51,16 @@ namespace Ex01.MenuItems
             if(m == 0)
             {
                 Console.WriteLine($"Acker({n}, {m})");
-                Console.WriteLine("If the calculation takes longer than 3 seconds, the program will return to the main menu.");
-                Task t = Task.Run( () => {
+                Console.WriteLine("If the calculation takes longer than 3 seconds, the program will exit.");
+                Task tCalc = Task.Run( () => {
                     uint result = Ackermann.Acker(n, m);
                     Console.WriteLine($"The result of the Ackermann function = {result}");
                     } );
-                if (! t.Wait(3000))
+                if (! tCalc.Wait(3000))
                 {
                     Console.WriteLine("The time is up.");
-                    Menu.Execute();
-                    //Environment.Exit(0);
+                    //Menu.Execute();
+                    Environment.Exit(0);
                 }
             }
         }
