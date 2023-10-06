@@ -13,13 +13,19 @@ namespace Ex01
         {
             Menu.ClearItems();
             Menu.AddItem(new MenuItemExit());
-            Menu.AddItem(new MenuItemHelloWorld());
+            //Menu.AddItem(new MenuItemHelloWorld());
+            Menu.AddItem("Hello world!", PrintHelloWorld);
             Menu.AddItem(new MenuItemCalc());
             Menu.AddItem(new MenuItemRecursionDate());
             while(true)
             {
                 Menu.Execute();
             }
+        }
+        
+        public static void PrintHelloWorld()
+        {
+            Console.WriteLine("Hello world!");
         }        
     }
 
