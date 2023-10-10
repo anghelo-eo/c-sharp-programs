@@ -55,6 +55,9 @@ namespace Ex01
                 case 4:
                     Menu.MenuItems.ToArray()[iMenu].Execute();
                     break;
+                case 5:
+                    Menu.MenuItems.ToArray()[iMenu].Execute();
+                    break;
                 default:
                     Console.WriteLine("Menu item not found.");
                     break;
