@@ -27,7 +27,7 @@ namespace Ex01
         public static void Execute()
         {               
             ShowMenu();
-            int iMenu = IOUtils.SafeReadInteger("",null);// было - 1, "" нужен чтобы компилятор не буксовал
+            int iMenu = IOUtils.SafeReadInteger(null);// было - 1
             /*if (iMenu >= 0 && iMenu < Menu.MenuItems.Count)
             {
                 Menu.MenuItems.ToArray()[iMenu].Execute();
@@ -50,6 +50,9 @@ namespace Ex01
                     Menu.MenuItems.ToArray()[iMenu].Execute();
                     break;
                 case 3:
+                    Menu.MenuItems.ToArray()[iMenu].Execute();
+                    break;
+                case 4:
                     Menu.MenuItems.ToArray()[iMenu].Execute();
                     break;
                 default:

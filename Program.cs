@@ -17,6 +17,7 @@ namespace Ex01
             Menu.AddItem("Hello world!", PrintHelloWorld);
             Menu.AddItem(new MenuItemCalc());
             Menu.AddItem(new MenuItemRecursionDate());
+            Menu.AddItem(new MenuItemSafeIntReading());
             while(true)
             {
                 Menu.Execute();
