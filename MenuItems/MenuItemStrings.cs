@@ -33,16 +33,28 @@ namespace Ex01.MenuItems
                 Console.WriteLine("ERROR: The entered string is longer than 40 characters.");
                 Execute();
             }
-            //Console.WriteLine($"String is {sTwo}");
-            int CompRes = sComparator.Compar(sOne, sTwo, sOneLen, sTwoLen);
+            Console.WriteLine("Check against the register.");
+            int checkOne = sComparator.Compar(sOne, sTwo, sTwoLen);
             if (sOneLen == sTwoLen)
             {
-                if (sOneLen == CompRes)
+                if (sOneLen == checkOne)
                 {
                     Console.WriteLine("Strings are equal characters by characters.");
                 }
             }
-            Console.WriteLine("Number of matching characters is :{0}", CompRes);
+            else if (sOneLen > sTwoLen)
+            {
+                Console.WriteLine("The first string is bigger than the second.");
+            }
+            else
+            {
+                Console.WriteLine("The first string is smaller than the second.");
+            }
+            Console.WriteLine("Number of matching characters is :{0}", checkOne);
+            Console.WriteLine("");
+            Console.WriteLine("Check without register and spaces at the beginning and end of the string.");
+            int checkTwo = CmpWithoutReg.ComparWReg(sOne, sTwo, sTwoLen);
+            Console.WriteLine("Number of matching characters is :{0}", checkTwo);
         }
     }
 }
