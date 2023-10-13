@@ -55,6 +55,17 @@ namespace Ex01.MenuItems
             Console.WriteLine("Check without register and spaces at the beginning and end of the string.");
             int checkTwo = CmpWithoutReg.ComparWReg(sOne, sTwo, sTwoLen);
             Console.WriteLine("Number of matching characters is :{0}", checkTwo);
+            Console.WriteLine("");
+            int checkThree = Palindrome.Palind(sOne.ToLower().Trim(), sTwo.ToLower().Trim());
+            if (checkThree == 1)
+            {
+                Console.WriteLine("The first string is a transposed for the second string.");
+            }
+            else
+            {
+                Console.WriteLine("The first string is not a transposed for the second string.");
+            }
+
         }
     }
 }
