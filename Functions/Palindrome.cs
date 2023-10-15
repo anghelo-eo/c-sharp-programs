@@ -9,7 +9,7 @@ namespace Ex01.MenuItems
     {
         public static void Palind(string sOne, string sTwo)
         {
-            Console.WriteLine("To detec a palindrome, all the spaces are ignored.");
+            Console.WriteLine("To detect a palindrome, all the spaces are ignored.");
             char[] array = sOne.ToCharArray();
             Array.Reverse(array);
             string revsOne = new String(array);

@@ -50,11 +50,12 @@ namespace Ex01.MenuItems
             }
             Console.WriteLine("Number of matching characters is :{0}\n", checkOne);
 
-            Console.WriteLine("Check without register and spaces at the beginning and end of the string.");
-            int checkTwo = CmpWithoutReg.ComparWReg(sOne, sTwo, sTwoLen);
+            Console.WriteLine("Checks case insensitively, double spaces and spaces at the beginning and end of a line.");
+            int checkTwo = CmpWithoutReg.ComparWReg(sOne.Replace("  ", ""), sTwo.Replace("  ", ""), sTwoLen);
             Console.WriteLine("Number of matching characters is :{0}\n", checkTwo);
 
             Palindrome.Palind(sOne.ToLower().Replace(" ", ""), sTwo.ToLower().Replace(" ", ""));
+            
             Recognizer.analiysis(sOne.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", ""));
             Recognizer.analiysis(sTwo.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", ""));
         }
