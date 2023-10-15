@@ -23,19 +23,24 @@ namespace Ex01.MenuItems
                 Console.WriteLine($"{sOne} is a email address.");
             }
 
-            if (matchesPhone.Count > 0)
+            else if (matchesPhone.Count > 0)
             {
                 Console.WriteLine($"{sOne} is a phone number.");
             }
 
-            if (matchesIpv4.Count > 0)
+            else if (matchesIpv4.Count > 0)
             {
                 Console.WriteLine($"{sOne} is a IPv4 address.");
             }
 
-            if (matchesIpv6.Count > 0)
+            else if (matchesIpv6.Count > 0)
             {
                 Console.WriteLine($"{sOne} is a IPv6 address.");
+            }
+
+            else
+            {
+                Console.WriteLine($"The string {sOne} is not an email address, phone number or IP address");
             }
         }
     }
