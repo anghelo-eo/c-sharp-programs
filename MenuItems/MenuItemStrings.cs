@@ -14,25 +14,23 @@ namespace Ex01.MenuItems
         {
             string? sOne = "";
             string? sTwo = "";
-            Console.Write("Enter the first string with fewer than 40 characters:");
+            Console.Write("Enter the first string with fewer than 100 characters:");
             sOne = Console.ReadLine();
             int sOneLen = sOne.Length;
-            //Console.WriteLine($"String is {sOne}");
-            Console.WriteLine(sOneLen);
-            if (sOneLen > 39)
+            if (sOneLen > 100)
             {
-                Console.WriteLine("ERROR: The entered string is longer than 40 characters.");
+                Console.WriteLine("ERROR: The entered string is longer than 100 characters.");
                 Execute();
             }
-            Console.Write("Enter the second string with fewer than 40 characters:");
+            Console.Write("Enter the second string with fewer than 100 characters:");
             sTwo = Console.ReadLine();
             int sTwoLen = sTwo.Length;
-            Console.WriteLine(sTwoLen);
-            if (sTwoLen > 39)
+            if (sTwoLen > 100)
             {
-                Console.WriteLine("ERROR: The entered string is longer than 40 characters.");
+                Console.WriteLine("ERROR: The entered string is longer than 100 characters.");
                 Execute();
             }
+
             Console.WriteLine("Check against the register.");
             int checkOne = sComparator.Compar(sOne, sTwo, sTwoLen);
             if (sOneLen == sTwoLen)
@@ -50,22 +48,15 @@ namespace Ex01.MenuItems
             {
                 Console.WriteLine("The first string is smaller than the second.");
             }
-            Console.WriteLine("Number of matching characters is :{0}", checkOne);
-            Console.WriteLine("");
+            Console.WriteLine("Number of matching characters is :{0}\n", checkOne);
+
             Console.WriteLine("Check without register and spaces at the beginning and end of the string.");
             int checkTwo = CmpWithoutReg.ComparWReg(sOne, sTwo, sTwoLen);
-            Console.WriteLine("Number of matching characters is :{0}", checkTwo);
-            Console.WriteLine("");
-            int checkThree = Palindrome.Palind(sOne.ToLower().Trim(), sTwo.ToLower().Trim());
-            if (checkThree == 1)
-            {
-                Console.WriteLine("The first string is a transposed for the second string.");
-            }
-            else
-            {
-                Console.WriteLine("The first string is not a transposed for the second string.");
-            }
+            Console.WriteLine("Number of matching characters is :{0}\n", checkTwo);
 
+            Palindrome.Palind(sOne.ToLower().Replace(" ", ""), sTwo.ToLower().Replace(" ", ""));
+            Recognizer.analiysis(sOne);
+            Recognizer.analiysis(sTwo);
         }
     }
 }

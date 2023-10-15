@@ -7,18 +7,19 @@ namespace Ex01.MenuItems
 {
     public class Palindrome : MenuItemStrings
     {
-        public static int Palind(string sOne, string sTwo)
+        public static void Palind(string sOne, string sTwo)
         {
+            Console.WriteLine("To detec a palindrome, all the spaces are ignored.");
             char[] array = sOne.ToCharArray();
             Array.Reverse(array);
             string revsOne = new String(array);
             if (sTwo == revsOne)
             {
-                return 1;
+                Console.WriteLine("The first string is a transposed for the second string.\n");
             }
             else
             {
-                return 0;
+                Console.WriteLine("The first string is not a transposed for the second string.\n");
             }
         }
     }
