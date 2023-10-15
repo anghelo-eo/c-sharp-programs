@@ -55,8 +55,8 @@ namespace Ex01.MenuItems
             Console.WriteLine("Number of matching characters is :{0}\n", checkTwo);
 
             Palindrome.Palind(sOne.ToLower().Replace(" ", ""), sTwo.ToLower().Replace(" ", ""));
-            Recognizer.analiysis(sOne);
-            Recognizer.analiysis(sTwo);
+            Recognizer.analiysis(sOne.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", ""));
+            Recognizer.analiysis(sTwo.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", ""));
         }
     }
 }
