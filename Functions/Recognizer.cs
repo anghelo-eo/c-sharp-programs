@@ -40,7 +40,7 @@ namespace Ex01.MenuItems
 
             else
             {
-                Console.WriteLine($"The string {sOne} is not an email address, phone number or IP address");
+                throw new Exception($"The string {sOne} is not an email address, phone number or IP address");
             }
         }
     }

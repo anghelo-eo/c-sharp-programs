@@ -14,6 +14,11 @@ namespace Ex01.MenuItems
             {
                 ++count;
             }
+            if (count <= 0)
+            {
+                throw new Exception("Strings are different.");
+            }
+
             if (sOneLen == sTwoLen)
             {
                 if (sOneLen == count)
@@ -23,11 +28,11 @@ namespace Ex01.MenuItems
             }
             else if (sOneLen > sTwoLen)
             {
-                Console.WriteLine("The first string is bigger than the second.");
+                throw new Exception("The first string is bigger than the second.");
             }
             else
             {
-                Console.WriteLine("The first string is smaller than the second.");
+                throw new Exception("The first string is smaller than the second.");
             }
             Console.WriteLine("Number of matching characters is :{0}\n", count);
         }

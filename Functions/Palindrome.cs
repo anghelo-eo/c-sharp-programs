@@ -19,7 +19,7 @@ namespace Ex01.MenuItems
             }
             else
             {
-                Console.WriteLine("The first string is not a transposed for the second string.\n");
+                throw new Exception("The first string is not a transposed for the second string.\n");
             }
         }
     }

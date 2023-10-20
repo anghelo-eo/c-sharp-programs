@@ -9,7 +9,7 @@ namespace Ex01.MenuItems
     {
         public static void ComparWReg(string sOne, string sTwo, int sOneLen, int sTwoLen)
         {
-            sComparator.Compar(sOne.ToLower().Trim(), sTwo.ToLower().Trim(), sOneLen,sTwoLen);
+            sComparator.Compar(sOne.ToLower().Trim(), sTwo.ToLower().Trim(), sOneLen, sTwoLen);
         }
     }
 }
