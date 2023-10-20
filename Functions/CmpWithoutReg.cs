@@ -7,9 +7,9 @@ namespace Ex01.MenuItems
 {
     public class CmpWithoutReg : MenuItemStrings
     {
-        public static int ComparWReg(string sOne, string sTwo, int sTwoLen)
+        public static void ComparWReg(string sOne, string sTwo, int sOneLen, int sTwoLen)
         {
-            return sComparator.Compar(sOne.ToLower().Trim(), sTwo.ToLower().Trim(), sTwoLen);
+            sComparator.Compar(sOne.ToLower().Trim(), sTwo.ToLower().Trim(), sOneLen,sTwoLen);
         }
     }
 }

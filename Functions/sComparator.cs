@@ -7,14 +7,29 @@ namespace Ex01.MenuItems
 {
     public class sComparator : MenuItemStrings
     {
-        public static int Compar(string sOne, string sTwo, int sTwoLen)
+        public static void Compar(string sOne, string sTwo, int sOneLen, int sTwoLen)
         {
             var count = -1;
             if (sOne.Take(sTwoLen).All(e => sOne[++count] == sTwo[count]))
             {
                 ++count;
             }
-            return count;
+            if (sOneLen == sTwoLen)
+            {
+                if (sOneLen == count)
+                {
+                    Console.WriteLine("Strings are equal characters by characters.");
+                }
+            }
+            else if (sOneLen > sTwoLen)
+            {
+                Console.WriteLine("The first string is bigger than the second.");
+            }
+            else
+            {
+                Console.WriteLine("The first string is smaller than the second.");
+            }
+            Console.WriteLine("Number of matching characters is :{0}\n", count);
         }
     }
 }
