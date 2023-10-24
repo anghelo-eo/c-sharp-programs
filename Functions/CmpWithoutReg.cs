@@ -16,8 +16,6 @@ namespace Ex01.MenuItems
             sTwo = sTwo.ToLower().Trim();
             int sOneLen = sOne.Length;
             int sTwoLen = sTwo.Length;
-            Console.WriteLine(sOne);
-            Console.WriteLine(sTwo);
             var count = -1;
             if (sOne.Take(sTwoLen).All(e => sOne[++count] == sTwo[count]))
             {
