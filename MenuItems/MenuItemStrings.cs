@@ -14,12 +14,6 @@ namespace Ex01.MenuItems
         {
             while(true)
             {
-                Console.WriteLine("WARNINIG: The program checks the strings in the following order:\n");
-                Console.WriteLine("1)comparation without register and spaces");
-                Console.WriteLine("2)symbolic comparation");
-                Console.WriteLine("3)whether the first string is the reverse of the second");
-                Console.WriteLine("4)whether the string is an email address or a phone number or an IP adress\n");
-                Console.WriteLine("If one check has generated an exception, the following checks are not executed!\n");
                 string? sOne = "";
                 string? sTwo = "";
                 Console.Write("Enter the first string with fewer than 100 characters:");
@@ -41,47 +35,50 @@ namespace Ex01.MenuItems
 
                 try
                 {
-                    Console.WriteLine("Checks case insensitively, double spaces and spaces at the beginning and end of a line.");
-                    CmpWithoutReg.ComparWReg(sOne.Replace("  ", ""), sTwo.Replace("  ", ""), sOneLen, sTwoLen);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine($"Exception:{e.Message}");
-                    break;
-                }
-
-                try
-                {
                     Console.WriteLine("Check against the register.");
                     sComparator.Compar(sOne, sTwo, sOneLen, sTwoLen);
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine($"Exception:{e.Message}");
-                    break;
+                    Console.WriteLine($"{e.Message}");
                 }
 
                 try
                 {
-                    Palindrome.Palind(sOne.ToLower().Replace(" ", ""), sTwo.ToLower().Replace(" ", ""));
+                    Console.WriteLine("Checks case insensitively, double spaces and spaces at the beginning and end of a line.");
+                    CmpWithoutReg.ComparWReg(sOne, sTwo);
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine($"Exception:{e.Message}");
-                    break;
+                    Console.WriteLine($"{e.Message}");
+                }
+
+                try
+                {
+                    Palindrome.Palind(sOne.ToLower(), sTwo.ToLower());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"{e.Message}");
                 }
                 
                 try
                 {
                     Recognizer.analiysis(sOne.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", ""));
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"{e.Message}");
+                }
+                
+                try
+                {
                     Recognizer.analiysis(sTwo.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", ""));
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine($"Exception:{e.Message}");
-                    break;
+                    Console.WriteLine($"{e.Message}");
                 }
-                
                 break;
             }
         }
