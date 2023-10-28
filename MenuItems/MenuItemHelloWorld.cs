@@ -10,7 +10,6 @@ namespace Ex01.MenuItems
         //public override string Title { get {return "Hello world!";} }
         public static string HELLO_WORLD = "Hello world!";
         public string _HelloWorld = "Hello world!"; 
-        //public override string Title { get {return "Привет, мир!";} }
         public override string Title {
             get 
             {
@@ -20,7 +19,6 @@ namespace Ex01.MenuItems
                 }
                 return _HelloWorld;
             }
-
              
         }
 
