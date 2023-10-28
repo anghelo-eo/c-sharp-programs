@@ -18,6 +18,7 @@ namespace Ex01.MenuItems
 
         public override void Execute()
         {
+            Console.WriteLine("Тест кодировки.");
             Console.WriteLine("This is where I studied the anonymous fuction.5");
             int value = IOUtils.SafeReadInteger("Enter first int value:", new IsNotZero().And(new IsMoreThanZero()));
             Console.WriteLine("Value is {0}", value);
