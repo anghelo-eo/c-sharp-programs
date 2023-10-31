@@ -98,5 +98,26 @@ namespace Ex01
                 Console.WriteLine("ERROR: Incorrect format. Enter correct date time...");
             }
         }
+
+        public static string SafeReadString(string message)
+        {
+            if(!string.IsNullOrEmpty(message))
+            {
+                Console.WriteLine(message);
+            }
+            while(true)
+            {
+                string tmpStr = Console.ReadLine();
+                int tmpStrLen = tmpStr.Length;
+                if (tmpStrLen > 100)
+                {
+                    Console.WriteLine("ERROR: The entered string is longer than 100 characters.");
+                }
+                else
+                {
+                    return tmpStr;
+                }  
+            }
+        }
     }
 }

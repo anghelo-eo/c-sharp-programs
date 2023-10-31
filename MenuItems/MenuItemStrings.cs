@@ -16,23 +16,11 @@ namespace Ex01.MenuItems
             {
                 string? sOne = "";
                 string? sTwo = "";
-                Console.Write("Enter the first string with fewer than 100 characters:");
-                sOne = Console.ReadLine();
+                sOne = IOUtils.SafeReadString("Enter the first string with fewer than 100 characters:");
+                sTwo = IOUtils.SafeReadString("Enter the second string with fewer than 100 characters:");
+                
                 int sOneLen = sOne.Length;
-                if (sOneLen > 100)
-                {
-                    Console.WriteLine("ERROR: The entered string is longer than 100 characters.");
-                    Execute();
-                }
-                Console.Write("Enter the second string with fewer than 100 characters:");
-                sTwo = Console.ReadLine();
                 int sTwoLen = sTwo.Length;
-                if (sTwoLen > 100)
-                {
-                    Console.WriteLine("ERROR: The entered string is longer than 100 characters.");
-                    Execute();
-                }
-
                 try
                 {
                     Console.WriteLine("Check against the register.");
